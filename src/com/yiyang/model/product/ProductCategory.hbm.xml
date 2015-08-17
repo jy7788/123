@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.yiyang.model.product">
+	<class name="ProductCategory" table="tb_productcategory">
+		<id name="id">
+			<generator class="native"/>
+		</id>
+		<property name="name" not-null="true" length="50"/>
+		<property name="level" length="11"/>
+		<property name="pid" length="11"/>
+		
+		<!-- 映射包含的商品集合 -->
+		<set name="products" inverse="true" lazy="extra">
+			<key column="categoryId"/>
+			<one-to-many class="Product" />
+		</set>
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="com.yiyang.model.product">
+	<class name="Product" table="tb_productinfo">
+		<id name="id">
+			<generator class="native"/>
+		</id>
+		<property name="name" not-null="true" length="100"/>
+		<property name="description" type="text"/>
+		<property name="createTime"/>
+		<property name="basePrice"/>
+		<property name="marketPrice"/>
+		<property name="sellPrice"/>
+		<property name="commend"/>
+		<property name="clickCount" length="11"/>
+		<property name="sellCount" length="11"/>
+		<property name="specifi" length="50"/>
+		<property name="brand" length="50"/>
+		<property name="modelNum" length="50"/>
+		<property name="unit" length="50"/>
+		<property name="primPic" length="255"/>
+		
+		<!-- 映射包含的商品图片 -->
+		<set name="uploadfiles" inverse="true" lazy="extra">
+			<key column="productId"/>
+			<one-to-many class="UploadFile" />
+		</set>
+		<many-to-one name="category" column="categoryId"/>
+	</class>
+</hibernate-mapping>

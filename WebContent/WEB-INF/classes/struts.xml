@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>  
+    <constant name="struts.i18n.encoding" value="utf-8"/>
+	<constant name="struts.ui.theme" value="simple" />
+		<package name="hzc" extends="struts-default">    
+		
+		<action name="order_*" class="com.yiyang.action.order.OrderAction" method="{1}">
+			<result name="add">/order/order_add.jsp</result>
+			<result name="check">/order/order_check.jsp</result>
+			<result name="list">/order/order_list.jsp</result>
+			<result name="detail">/order/order_detail.jsp</result>
+			<result name="error">/common/error.jsp</result>
+		</action>
+		<action name="cart_*" class="com.yiyang.action.order.CartAction" method="{1}">
+		    <result name="list">/order/cart_list.jsp</result>
+		    <result name="add">/shop/product_detail.jsp</result>
+		    <result name="input">/user/user_login.jsp</result>
+		</action>
+		<action name="appointment_*" class="com.yiyang.action.appointment.AppointmentAction" method="{1}">
+		    <result name="success">/appointment/appointment_success.jsp</result>
+		    <result name="show">/appointment/appointment_add.jsp</result>
+		    <result name="input">/common/error.jsp</result>
+		</action>		
+   </package>
+   
+   <package name="productList" extends="struts-default">
+		<action name="shopInit" class="com.yiyang.action.product.ShopAction" method="shopInit">
+			<result name="success">/shop/product_list.jsp</result>
+		</action>
+		<action name="searchById" class="com.yiyang.action.product.ProductAction" method="searchById">
+			<result name="success">/shop/product_detail.jsp</result>
+		</action>		
+		<action name="searchPage" class="com.yiyang.action.product.ProductAction" method="searchPage">
+			<result name="success">/shop/product_list.jsp</result>
+		</action>
+	</package>
+	
+	<package name="user" extends="struts-default">
+		<action name="register" class="com.yiyang.action.user.UserAction" method="register">
+			<result name="success">/user/user_reg_success.jsp</result>
+			<result name="input">/user/user_reg.jsp</result>
+		</action>
+		<action name="login" class="com.yiyang.action.user.UserAction" method="login">
+			<result name="success" type="chain">shopInit</result>
+			<result name="input">/user/user_login.jsp</result>
+		</action>
+		<action name="safequit" class="com.yiyang.action.user.UserAction" method="safeQuit">
+			<result name="success" type="chain">shopInit</result>
+		</action>
+	</package>
+   
+</struts>

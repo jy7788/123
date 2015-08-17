@@ -1,0 +1,83 @@
+@charset "utf-8";
+
+/* reset */
+body{font:12px/18px arial,sans-serif;color:#585858;text-align: center;}
+
+body,div,p,span,form,iframe,table,td,th,input,textarea,button,label,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
+h1,h2,h3,h4,h5,h6{font-size:100%; }
+ul,ol,li,dl{list-style-type:none;}
+em,i,dfn,cite,strong,small{font-style:normal;} 
+img{border:0;}
+fieldset,button,input,select,option{vertical-align:middle;font:12px/18px arial,sans-serif;}
+table{border-collapse:collapse;border-spacing:0}
+textarea{resize:none}
+
+
+/*顶部客户中心*/
+#customercenter
+{
+	height:25px;
+	background-color:#F0F0F0;
+	line-height:25px;
+}
+#customercenter_left
+{
+	float:left;
+	margin-left:20px;
+}
+.customercenter_right
+{
+	float:right;
+	margin-right:20px;	
+}
+
+#banner
+{
+    background-color:#971922 ;
+    height:100px;
+}
+
+.blank
+{
+    height: 20px;
+}
+
+a
+{
+    color:#000000;
+    text-decoration:none;
+}
+
+ul#nav
+{
+    width:100%;
+    height:30px;
+    background:#000;
+    margin:0 auto;
+}
+ul#nav li
+{
+    display:inline;
+    height:30px;
+}
+ul#nav li a
+{
+    display:inline-block;
+    padding:0 20px;
+    height:30px;
+    line-height:30px;
+    color:#FFF;
+    font-family:"Microsoft Yahei","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size:12px
+}
+ul#nav li a:hover
+{
+    background:#BA2636;
+}
+
+ .dialog
+ {
+    position:absolute; left:76.5%; bottom:0;
+    overflow:hidden; width:311px; height:1px;        	       
+               	} 
+        
